@@ -1,2 +1,2 @@
 # Cantina
-Proyecto de Cantina Universitaria
+WebApp para Cantina Universitaria con sistema Ecommerce(MP) 
