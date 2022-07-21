@@ -8,74 +8,90 @@
     class Reserva{
         
     /********** Atributos **********/
-    private $id, $id_usuario, $fecha, $hora, $cancha, $quincho, $tipo, $monto;
+    private $id, $legajo, $id_plato, $nombre, $apellido, $fecha, $estado, $llevar;
     
     //Nota: tipo seria Dia o Mensual
     
     /********** Constructor **********/
-    function __construct() {
+    public function __construct() {
         $this->setId(0);
-        $this->setIdUsuario(0);
+        $this->setLegajo(0);
+        $this->setId_plato(0);
+        $this->setNombre("");
+        $this->setApellido("");
         $this->setFecha("");
-        $this->setHora("");
-        $this->setCancha("");
-        $this->setQuincho("");
-        $this->setTipo("");
-        $this->setMonto("");
-    }
-    
-    /********** Getters **********/
-    public function getId(): int {
-        return $this->id;
-    }
-    public function getIdUsuario(): string{
-        return $this->id_usuario;
-    }
-    public function getFecha(): string{
-        return $this->fecha;
-    }
-    public function getHora(): string{
-        return $this->hora;
-    }
-    public function getCancha(): string{
-        return $this->cancha;
-    }
-    public function getQuincho(): string{
-        return $this->quincho;
-    }
-    public function getTipo(): string{
-        return $this->tipo;
-    }
-    public function getMonto(): string{
-        return $this->monto;
+        $this->setEstado("");
+        $this->setLlevar("");
     }
 
+    
+    /********** Getters **********/
+    public function getId() {
+        return $this->id;
+    }
+
+    public function getLegajo() {
+        return $this->legajo;
+    }
+
+    public function getId_plato() {
+        return $this->id_plato;
+    }
+
+    public function getNombre() {
+        return $this->nombre;
+    }
+
+    public function getApellido() {
+        return $this->apellido;
+    }
+
+    public function getFecha() {
+        return $this->fecha;
+    }
+
+    public function getEstado() {
+        return $this->estado;
+    }
+
+    public function getLlevar() {
+        return $this->llevar;
+    }
+
+    
     /********** Setters **********/
-    public function setId($id) {
-        $this->id = (is_integer($id) && ($id > 0)) ? $id: 0;
+    public function setId($id): void {
+        $this->id = (is_integer($id) && ($id > 0)) ?$id : 0;
     }
-    public function setIdUsuario($id_usuario){
-        $this->id_usuario = $id_usuario;
+
+    public function setLegajo($legajo): void {
+        $this->legajo = $legajo;
     }
-    public function setFecha($fecha){
+
+    public function setId_plato($id_plato): void {
+        $this->id_plato = (is_integer($id) && ($id > 0)) ?$id : 0;
+    }
+
+    public function setNombre($nombre): void {
+        $this->nombre = $nombre;
+    }
+
+    public function setApellido($apellido): void {
+        $this->apellido = $apellido;
+    }
+
+    public function setFecha($fecha): void {
         $this->fecha = $fecha;
     }
-    public function setHora($hora){
-        $this->hora = $hora;
+
+    public function setEstado($estado): void {
+        $this->estado = $estado;
     }
-    public function setCancha($cancha){
-        $this->cancha = $cancha;
+
+    public function setLlevar($llevar): void {
+        $this->llevar = $llevar;
     }
-    public function setQuincho($quincho){
-        $this->quincho = $quincho;
-    }
-    public function setTipo($tipo){
-        $this->tipo = $tipo;
-    }
-    public function setMonto($monto){
-        $this->monto = $monto;
-    }
-    
+
     /********** Métodos **********/
     
     public function toArray(): array{
