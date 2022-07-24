@@ -15,7 +15,7 @@
     $preference->items = array($item);
     
     $preference->back_urls = array(
-        "success" => "http://localhost/Cantina/files/captura.php",
+        "success" => "http://localhost/Cantina/files/comprobante.php",
         "fail" => "http://localhost/Cantina/files/fallo.php."
     );
     
