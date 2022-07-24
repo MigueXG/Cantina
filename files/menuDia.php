@@ -14,6 +14,14 @@
     
     $preference->items = array($item);
     
+    $preference->back_urls = array(
+        "success" => "http://localhost/Cantina/files/captura.php",
+        "fail" => "http://localhost/Cantina/files/fallo.php."
+    );
+    
+    $preference->auto_return = "approved";
+    $preference->binary_mode = true;
+    
     $preference->save();
 
 ?>
