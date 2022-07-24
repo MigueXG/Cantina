@@ -131,14 +131,13 @@
 
                                     </script>
                                     
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-    </div>
-            
-            </div>
+        </div>
                             
     </main>
     <!-- Llama al pie de la página-->
