@@ -65,68 +65,67 @@
                     <div class="col-md-12 col-sm-12">
                         <div class="card">
                             <div class="card-header">Menú del Día</div>
-                                <div class="card-body">
-                                    <div class="row descripcion">
-                                        <strong>Usted está encargando: </strong>
-                                        <p class="card-title">Buseca - guiso que lleva como ingrediente principal el mondongo.</p>
+                            <div class="card-body">
+                                <div class="row descripcion">
+                                    <strong>Usted está encargando: </strong>
+                                    <p class="card-title">Buseca - guiso que lleva como ingrediente principal el mondongo.</p>
+                                </div>
+                                <form action="" method="">
+                                    <div class="form-group row">
+                                        <label for="legajo" class="col-md-3 col-sm-2 col-12 col-form-label text-md-right">Ingresa tu legajo</label>
+                                        <div class="col-md-6 col-sm-2 col-10">
+                                            <input type="" id="legajo" class="form-control" name="legajo" required autofocus >
+                                        </div>
+                                        <a class="col-md-3 col-sm-1 col-2" href=""><i class="fa-solid fa-magnifying-glass"></i></a>
 
                                     </div>
-                                    <form action="" method="">
-                                        <div class="form-group row">
-                                            <label for="legajo" class="col-md-3 col-sm-2 col-12 col-form-label text-md-right">Ingresa tu legajo</label>
-                                            <div class="col-md-6 col-sm-2 col-10">
-                                                <input type="" id="legajo" class="form-control" name="legajo" required autofocus >
-                                            </div>
-                                            <a class="col-md-3 col-sm-1 col-2" href=""><i class="fa-solid fa-magnifying-glass"></i></a>
 
+                                    <div class="form-group row">
+                                        <label for="nombre" class="col-md-3 col-form-label text-md-right">Nombre y Apellido</label>
+                                        <div class="col-md-9">
+                                            <input disabled placeholder="Nombre, Apellido"type="" id="nombre" class="form-control" name="nombre" required>
                                         </div>
+                                    </div>
 
-                                        <div class="form-group row">
-                                            <label for="nombre" class="col-md-3 col-form-label text-md-right">Nombre y Apellido</label>
-                                            <div class="col-md-9">
-                                                <input disabled placeholder="Nombre, Apellido"type="" id="nombre" class="form-control" name="nombre" required>
-                                            </div>
+                                    <div class="form-group row">
+                                        <label for="nombre" class="col-md-3 col-form-label text-md-right">Claustro</label>
+                                        <div class="col-md-3">
+                                            <input disabled placeholder="Alumno/Docente"type="" id="nombre" class="form-control" name="nombre" required>
                                         </div>
-
-                                        <div class="form-group row">
-                                            <label for="nombre" class="col-md-3 col-form-label text-md-right">Claustro</label>
-                                            <div class="col-md-3">
-                                                <input disabled placeholder="Alumno/Docente"type="" id="nombre" class="form-control" name="nombre" required>
-                                            </div>
-                                            <label for="nombre" class="col-md-2 col-form-label text-md-right">Precio</label>
-                                            <div class="col-md-4">
-                                                <input disabled placeholder="$xxx,xx"type="" id="nombre" class="form-control" name="nombre" required>
-                                            </div>
+                                        <label for="nombre" class="col-md-2 col-form-label text-md-right">Precio</label>
+                                        <div class="col-md-4">
+                                            <input disabled placeholder="$xxx,xx"type="" id="nombre" class="form-control" name="nombre" required>
                                         </div>
+                                    </div>
 
-                                        <div class="form-group row">
-                                            <div class="col-md-6 offset-md-3">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" name="remember"> ¿Para llevar?
-                                                    </label>
-                                                </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-6 offset-md-3">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="remember"> ¿Para llevar?
+                                                </label>
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="checkout-btn"></div>
+                                    <div class="checkout-btn"></div>
 
-                                        <!-- Inicializa el checkout -->
-                                        <script>
-                                            const mp = new MercadoPago('TEST-0aca42bf-a74c-4984-8a28-9901d087c45b',{
-                                                locale: 'es-AR'
-                                            });
-                                            mp.checkout({
-                                                preference:{
-                                                    id: '<?php echo $preference->id; ?>'
-                                                },
-                                                render: {
-                                                    container: '.checkout-btn',
-                                                    label: 'BOTON ROJO'
-                                                }
-                                            })
-                                        </script>
-                                    </form>
+                                    <!-- Inicializa el checkout -->
+                                    <script>
+                                        const mp = new MercadoPago('TEST-0aca42bf-a74c-4984-8a28-9901d087c45b',{
+                                            locale: 'es-AR'
+                                        });
+                                        mp.checkout({
+                                            preference:{
+                                                id: '<?php echo $preference->id; ?>'
+                                            },
+                                            render: {
+                                                container: '.checkout-btn',
+                                                label: 'BOTON ROJO'
+                                            }
+                                        })
+                                    </script>
+                                </form>
                             </div>
                         </div>
                     </div>
