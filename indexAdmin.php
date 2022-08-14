@@ -40,7 +40,7 @@
                 border: 1px solid lightseagreen;
             }
             .avatar{
-                width: 100px;height: 100px;border-radius: 50%;position: absolute;top: -50px;left: calc(50% - 50px);
+                width: 100px;height: 100px;border-radius: 50%;position: absolute;top: -50px;left: calc(50% - 50px); background-color: white;
             }
             .logo{
                 width: 100px;
@@ -80,12 +80,12 @@
             <img src="img/mountain_icon.png" class="avatar">
             <h1>Cantina Universitaria</h1>
             <br/>
-            <form method="post" action="#">
+            <form method="post" action="files/reservas.php">
                 <p>Usuario</p> 
-                <input type="text" name="" placeholder="Enter Username">
+                <input type="text" name="" placeholder="Ingresa un nombre de usuario">
                 <p>Contraseña</p> 
-                <input type="password" name="" placeholder="Enter Password">
-                <input type="submit" name="" value="Login"/> 
+                <input type="password" name="" placeholder="Ingresa una contraseña">
+                <input type="submit" name="" value="Ingresar"/> 
             </form>
             <img src="img/logo.png" class="logo">
         </div>

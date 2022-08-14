@@ -14,7 +14,13 @@
         <script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <link href="/lib/bootstrap.min.js" type="text/javascript"/>
-        <script src="lib/bootstrap.bundle.min.js" type="text/javascript"></script>   
+        <script src="lib/bootstrap.bundle.min.js" type="text/javascript"></script>  
+        
+        <style type="text/css">
+            .row{
+                align-items: flex-start;
+            }
+        </style>
     </head>
     
     <body class="Site">
@@ -26,14 +32,14 @@
         <main class="Site-content">
             
             <div class="container mt-5 mb-5">
-                <div class="row g-0">
+                <div class="row">
                     <div class="col-md-9 border-right">
                         <div class="p-3 bg-white">
-                            <div class="d-flex justify-content-between align-items-center">
-                               <h6 class="heading1">Reservas de Hoy</h6>
+                            <div class="d-flex justify-content-between align-items-center p-2 border-bottom">
+                               <h6 class="heading1 ">Reservas de Hoy</h6>
                             </div>
                             <div class="table-responsive">
-                            <table class="table table-borderless">
+                            <table class="table table-hover table-borderless">
                                <thead>
                                    <th>Legajo</th>
                                    <th>Nombre y Apellido</th>
@@ -43,53 +49,46 @@
                                </thead>
                                <tbody>
                                     <tr>
-                                        <td>US10</td>
-                                        <td>Air Jordon 1 Mis Shattered Backboard</td>
-                                        
-                                        <td>1/8/20</td>
-                                        <td>$140.00</td> 
-                                        <td><a href="#" class="entregado btn btn-outline-dark">Entregar</a></td>   
+                                        <td id="legajo">2005670</td>
+                                        <td id="nombre">Air Jordon 1 Mis Shattered </td>
+                                        <td id="plato">Backboard</td>
+                                        <td id="llevar" >
+                                            <input type="checkbox" id="" name="" value="">
+                                            <label for="">Llevar</label>
+                                        </td> 
+                                        <td><a href="" class="entregado btn btn-outline-dark">Entregar</a></td>   
                                     </tr>
                                     <tr>
-                                        <td>US10</td>
-                                        <td>Air Jordon 1 Mis Shattered 'Red hunt'</td>
+                                        <td>3900730</td>
+                                        <td>Air Jordon 1 Mis Shattered </td>
                                         
-                                        <td>1/8/20</td>
-                                        <td>$240.00</td> 
+                                        <td>'Red hunt'</td>
+                                        <td>
+                                            <input type="checkbox" id="" name="" value="">
+                                            <label for="">Llevar</label>
+                                        </td> 
                                         <td><a href="#" class="btn btn-outline-dark">Entregar</a></td>   
                                     </tr>
 
                                    <tr>
-                                        <td>US8</td>
-                                        <td>Nike Sachi x LDWaffle 'Pine Green'</td>
-                                    
-                                    <td>1/6/20</td>
-                                    <td>$360.00</td> 
-                                     <td><a href="#" class="btn btn-outline-dark">Entregar</a></td>   
+                                        <td>1-20450560/15</td>
+                                        <td>Nike Sachi x LDWaffle </td>
+                                        <td>'Pine Green'</td>
+                                        <td>
+                                            <input type="checkbox" id="" name="" value="">
+                                            <label for="">Llevar</label>
+                                        </td> 
+                                         <td><a href="#" class="btn btn-outline-dark">Entregar</a></td>   
                                     </tr>
                                     <tr>
-                                        <td>US10.5</td>
-                                        <td>Versace Chain Reaction'Black Multi' </td>
-                                    
-                                        <td>1/4/20</td>
-                                        <td>$1,240.00</td> 
-                                         <td><a href="#" class="btn btn-outline-dark">Entregar</a></td>   
-                                   </tr>
-                                   <tr>
-                                    <td>US10.5</td>
-                                    <td>Versace Chain Reaction'Black Multi' </td>
-                                    
-                                    <td>1/4/20</td>
-                                    <td>$1,240.00</td> 
-                                     <td><a href="#" class="btn btn-outline-dark">Entregar</a></td>   
-                                   </tr>
-                                   <tr>
-                                    <td>US10.5</td>
-                                    <td>Versace Chain Reaction'Black Multi' </td>
-                                    
-                                    <td>1/4/20</td>
-                                    <td>$1,240.00</td> 
-                                     <td><a href="#" class="btn btn-outline-dark">Entregar</a></td>   
+                                        <td>1-35750560/12</td>
+                                        <td>Versace Chain Reaction </td>
+                                        <td>'Black Multi'</td>
+                                        <td>
+                                            <input type="checkbox" id="" name="" value="">
+                                            <label for="">Llevar</label>
+                                        </td> 
+                                        <td><a href="#" class="btn btn-outline-dark">Entregar</a></td>   
                                    </tr>
 
                                </tbody>
@@ -105,24 +104,24 @@
                             <div class="progress-2 mt-3">
                                 <div class="d-flex justify-content-between">
 
-                                 <span class="orders">Orders</span>
-                                <span class="orders">5/20</span>
+                                 <span class="orders">Pedidos</span>
+                                <span class="orders">1/20</span>
 
                                  </div>
                                    <div class="progress">
-                                    <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 5%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
 
                                     </div>
                                 </div>
                             </div>
                             <div class="progress-3 mt-3">
                                 <div class="d-flex justify-content-between">
-                                    <span class="customer">Customer Satisfaction</span>
+                                    <span class="customer">Satisfaccion</span>
                                     <span class="customer">Very Good</span>
                                 </div>
 
                                 <div class="progress">
-                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 5%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>               
                             </div>
                                  <div class="d-flex justify-content-between mt-3 text-dark">
