@@ -61,12 +61,12 @@
                                             <button class="btn btn-lg btn-outline-dark">Nuevo Plato</button>
                                         </div>
                                     </div>
-                                    <hr>
-                                    <div class="row descripcion">
-                                        <p class="card-title">Selección de menú existente</p>
-                                    </div>
                                     
-                                    <form action="" method="">
+                                    <!-- Formulario de menu existente -->
+                                    <div style="display:none;" class="row descripcion">
+                                    <hr>
+                                        <p class="card-title">Selección de menú existente</p>
+                                        <form action="" method="">
                                         <div class="form-group row">
                                             <label for="legajo" class="col-md-3 col-sm-3 col-12 col-form-label text-md-right">Plato</label>
                                             <div class="col-md-2 col-sm-2 col-10">
@@ -83,6 +83,11 @@
                                             <a type="button" class="btn btn-outline-primary">Seleccionar</a>
                                         </div>    
                                     </form>
+                                    
+                                    </div>
+                                    
+                                    <!-- Formulario de nuevo plato -->
+                                    <div style="display:none;" class="row descripcion">
                                     <hr style="margin-top: 50px">
                                     <p>Carga de nuevo plato</p>
                                     
@@ -106,6 +111,7 @@
                                                 <input type="file" id="" name="filename">
                                             </div>   
                                     </form>
+        </div>
                 </div>
             </div>
         </div>
