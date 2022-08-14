@@ -16,34 +16,38 @@
               </div>
             </div>
          </nav>
-<!--Carrusel de imagenes>
+
+              
+         <p>
+          <div id="reloj" class="reloj"  style="text-align:right;padding-right:1em;font-weight:bold; font-size:1.5em">00 : 00 : 00</div></p>
             <script>
-            $('.carousel').carousel();
-            </script>
-            <div class="col-md-12 banner">
-            
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <!--ol class="carousel-indicators">
-                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                
-                </ol>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                      <img src="img/1.png" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                      <img src="img/2.png" class="d-block w-100" alt="...">
-                  </div>
-                  
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </div>
-        </div-->
+            function actual() {
+         fecha=new Date(); //Actualizar fecha.
+         dia = fecha.getDate();
+         mes = fecha.getMonth()+1;
+         anio=fecha.getFullYear();
+
+         hora=fecha.getHours(); //hora actual
+         minuto=fecha.getMinutes(); //minuto actual
+         segundo=fecha.getSeconds(); //segundo actual
+         if (hora<10) { //dos cifras para la hora
+            hora="0"+hora;
+            }
+         if (minuto<10) { //dos cifras para el minuto
+            minuto="0"+minuto;
+            }
+         if (segundo<10) { //dos cifras para el segundo
+            segundo="0"+segundo;
+            }
+         //ver en el recuadro del reloj:
+         mireloj = hora+":"+minuto+":"+segundo;	
+				 return mireloj; 
+         }
+          function actualizar() { //función del temporizador
+            mihora=actual(); //recoger hora actual
+            mireloj=document.getElementById("reloj"); //buscar elemento reloj
+          
+            mireloj.innerHTML= dia + "/" + mes + "/" + anio + "&nbsp;&nbsp;&nbsp;" + mihora; //incluir hora en elemento
+            }
+          setInterval(actualizar,1000); //iniciar temporizador
+                      </script>
