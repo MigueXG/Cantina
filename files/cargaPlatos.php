@@ -37,6 +37,7 @@
                 </div>
             </div>
             <script>
+                //Función para mostrar u ocultar formulario de menu
                 function menuDiario() {
                 var x = document.getElementById("menuDiario");
                 if (x.style.display === "none") {
@@ -44,7 +45,27 @@
                 } else {
                     x.style.display = "none";
                 }
+                }
+                //Función para mostrar plato existente
+                function existente() {
+                var x = document.getElementById("existente");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
             }
+            //Función para cargar nuevo plato
+            function nuevo() {
+                var x = document.getElementById("nuevo");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+
+
             </script>
         
             <!-- Formulario de carga de menu -->
@@ -57,13 +78,13 @@
                                 <div class="card-body">
                                     <div class="container">
                                         <div class="row justify-content-center">
-                                            <button style="margin-right: 20px;" class="btn btn-lg btn-outline-dark">Plato Existente</button>
-                                            <button class="btn btn-lg btn-outline-dark">Nuevo Plato</button>
+                                            <button onclick="existente()"style="margin-right: 20px;" class="btn btn-lg btn-outline-dark">Plato Existente</button>
+                                            <button onclick="nuevo()"class="btn btn-lg btn-outline-dark">Nuevo Plato</button>
                                         </div>
                                     </div>
                                     
                                     <!-- Formulario de menu existente -->
-                                    <div style="display:none;" class="row descripcion">
+                                    <div style="display:none;" class="row descripcion" id="existente">
                                     <hr>
                                         <p class="card-title">Selección de menú existente</p>
                                         <form action="" method="">
@@ -87,7 +108,7 @@
                                     </div>
                                     
                                     <!-- Formulario de nuevo plato -->
-                                    <div style="display:none;" class="row descripcion">
+                                    <div id="nuevo"style="display:none;" class="row descripcion">
                                     <hr style="margin-top: 50px">
                                     <p>Carga de nuevo plato</p>
                                     

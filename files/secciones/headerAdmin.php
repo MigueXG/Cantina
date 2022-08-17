@@ -19,7 +19,7 @@
 
               
          <p>
-          <div id="reloj" class="reloj"  style="text-align:right;padding-right:1em;font-weight:bold; font-size:1.5em">00 : 00 : 00</div></p>
+          <div id="reloj" class="reloj"  style="text-align:right;padding-right:1em;font-weight:bold; font-size:1.2em">00 : 00 : 00</div></p>
             <script>
             function actual() {
          fecha=new Date(); //Actualizar fecha.
