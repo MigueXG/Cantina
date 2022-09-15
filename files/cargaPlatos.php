@@ -11,10 +11,13 @@
         <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
         <script src="https://kit.fontawesome.com/087ef8a17c.js" crossorigin="anonymous"></script>
         <!--Scripts-->
+        <script src="lib/jquery-3.6.1.min.js" type="text/javascript"></script>
+        <script src="lib/jquery-3.6.1.slim.min.js" type="text/javascript"></script>
         <script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <link href="/lib/bootstrap.min.js" type="text/javascript"/>
         <script src="lib/bootstrap.bundle.min.js" type="text/javascript"></script>
+        <script src="js/Plato.js" type="text/javascript"></script>
         <!--SDK MercadoPago.js V2-->
         <script src="https://sdk.mercadopago.com/js/v2"></script>
     </head>
@@ -27,6 +30,15 @@
                
         <!--Contenido del sitio-->
         <main class="Site-content">
+            <!-- div de error de pruebas -->
+             <div class="alert alert-danger" id="divError" name="divError" hidden style="padding: 0"></div>
+                    <div class="alert alert-success" hidden style="padding: 0" id="divSucces" name="divSucces">
+                        <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span></button>
+                        <p class="text-center" style="margin: 0; padding: 0">Alta exitosa</p>
+                    </div>
+                     <div class="alert alert-danger" id="divError" name="divError" hidden style="padding: 0">
+                    </div>
             <h2>Carga de Menú</h2>
             <p>Seleccione el tipo de carga que se va a realizar:</p>
             <!--Botones para el tipo de menu que quiere cargar -->
@@ -64,8 +76,7 @@
                     x.style.display = "none";
                 }
             }
-
-
+            
             </script>
         
             <!-- Formulario de carga de menu -->
@@ -112,25 +123,32 @@
                                     <hr style="margin-top: 50px">
                                     <p>Carga de nuevo plato</p>
                                     
-                                    <form action="" method="">
+                                    <form  method="POST" action="" id="formnuevoplato" name="formnuevoplato" onsubmit="return false " enctype="multipart/form-data">
+                                        <input type="text" hidden="" value="ALTA" id="ordendealta" name="ordendealta" />
                                         <div class="form-group row">
-                                            <label for="legajo" class="col-md-2 col-sm-2 col-12 col-form-label text-md-right">Nombre</label>
+                                            <label for="nomplato" class="col-md-2 col-sm-2 col-12 col-form-label text-md-right">Nombre</label>
                                                 <div class="col-md-3 col-sm-3 col-10">
-                                                    <input type="" id="legajo" class="form-control" name="legajo" required autofocus >
+                                                    <input type="" id="nomplato" class="form-control" name="nomplato" required autofocus >
                                                 </div>
-                                                <label for="legajo" class="col-md-2 col-sm-2 col-12 col-form-label text-md-right">Cantidad</label>
+                                                <label for="cantplato" class="col-md-2 col-sm-2 col-12 col-form-label text-md-right">Cantidad</label>
                                                 <div class="col-md-2 col-sm-2 col-10">
-                                                    <input type="number" id="legajo" class="form-control" name="legajo" required autofocus >
+                                                    <input type="number" id="cantplato" class="form-control" name="cantplato" required autofocus >
                                                 </div>
                                             </div>  
                                             <div class="form-group row">
-                                                <label for="legajo" class="col-md-2 col-sm-2 col-12 col-form-label text-md-right">Descripción</label>
+                                                <label for="descplato" class="col-md-2 col-sm-2 col-12 col-form-label text-md-right">Descripción</label>
                                                 <div class="col-md-3 col-sm-3 col-10">
-                                                    <textarea type="" id="legajo" class="form-control" name="legajo" required autofocus ></textarea> 
+                                                    <textarea type="" id="descplato" class="form-control" name="descplato" required autofocus ></textarea> 
                                                 </div>
-                                                <label for="legajo" class="col-md-2 col-sm-2 col-12 col-form-label text-md-right">Imagen</label>
-                                                <input type="file" id="" name="filename">
-                                            </div>   
+                                                <label for="archimagen" class="col-md-2 col-sm-2 col-12 col-form-label text-md-right">Imagen</label>
+                                                <input type="file" id="archimagen" name="archimagen">
+                                            </div> 
+                                        <select id="seltipo" name="seltipo">
+                                            <option value="Menu">Diario</option>
+                                            <option value="Fijo">Fijo</option>
+                                            <option value="Veggie">Vegano</option>
+                                        </select>
+                                        <a type="button" class="btn btn-outline-primary" onclick="plato.alta()">Alta</a>
                                     </form>
         </div>
                 </div>
