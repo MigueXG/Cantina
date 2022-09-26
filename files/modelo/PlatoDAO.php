@@ -12,8 +12,34 @@ class PlatoDAO extends DAO implements DAOInterfacePlatos {
         
     }
 
-    public function cargar($id): \Platos {
+    public function cargar($id): \Plato {
+        $plato = new Plato();
         
+        if(!is_integer($id) || ($id <= 0)){
+            $this->setError("El identificador ingresado es invalido.");
+            return $plato;
+        }
+        $sql = 'SELECT * FROM platos WHERE id_plato = :id;';
+        if ($stmt = $this->conexion->prepare($sql)) {
+            if ($stmt->execute(array("id" => $id))) {
+                if ($stmt->rowCount() == 1) {
+                    $registro = $stmt->fetch();
+                    $plato->setId((int) $registro->id_plato);
+                    $plato->setNombre($registro->p_nombre);
+                    $plato->setDescripcion($registro->p_descripcion);
+                    $plato->setImagen($registro->p_foto);
+                    $plato->setTipo($registro->p_tipo);
+                    $plato->setEstado($registro->p_estado);
+                }
+            } else {
+                $this->setError($stmt->errorInfo()[2]);
+            }
+            $stmt = null;
+        } else {
+            $this->setError($this->conexion->errorInfo()[2]);
+        }
+
+        return $plato;
     }
 
     public function eliminar($objeto): bool {
@@ -50,7 +76,32 @@ class PlatoDAO extends DAO implements DAOInterfacePlatos {
     }
 
     public function listar($filtros): array {
+        $registros = array();
+        $this->setRegistrosEncontrados(0);
+        $this->setError(0);
         
+        $sql = 'SELECT * FROM platos WHERE p_tipo = "Menu"';
+        
+        if($stmt = $this->conexion->prepare($sql)){
+            if($stmt->execute()){
+                $registros = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                if($stmtTotal = $this->conexion->prepare("SELECT FOUND_ROWS();")){
+                    if($stmtTotal->execute()){
+                        $total = $stmtTotal->fetch(PDO::FETCH_NUM);
+                        $this->setRegistrosEncontrados((int)$total[0]);
+                        unset($total);
+                    }
+                    $stmtTotal = null;
+                }else{
+                    $this->setError($this->conexion->errorInfo()[2]);
+            }   
+        }else{
+            $this->setError($stmt->errorInfo()[2]);
+        }$stmt = null;
+        }else{
+            $this->setError($this->conexion->errorInfo()[2]);
+        }
+        return $registros;
     }
 
 }

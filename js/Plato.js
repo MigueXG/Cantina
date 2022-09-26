@@ -21,9 +21,9 @@ let plato = {
                       console.log("Error en la carga");
 
                     }else{
-                    //actividad.resetearAlta();
+                    //plato.resetearAlta();
                     
-                    console.log("alta exitosa")
+                    console.log("alta exitosa") //CAMBIAR POR UN CARTEL DESCENTE
 
                     setTimeout("history.back()",1000);
                     }
@@ -38,12 +38,76 @@ let plato = {
         
     },
     "cargar" : function(id){
+        plato.abm({"id":id,"accion":"CARGAR"});
         
     },
-    "listar" : function(){
-        
+    "listarPlatos" : function(){
+        plato.filtros.accion = "LISTAR";
+        plato.filtros.indice = 0;
+        plato.filtros.cantidad = 0;
+        plato.filtros.clave = "";
+        plato.abm(this.filtros);
     },
     "validarPlato" : function(){
         
-    }
-}
+    },
+   
+    "abm" : function(param){
+         $.ajax(
+            {
+            "url": plato.parametros.url,
+            "method":"POST",
+            "dataType":"JSON",
+            "accept":"JSON",
+            "data":{"data":JSON.stringify(param)}
+        }).done(function(data,textStatus){
+            console.log(data);
+            switch(data.accion){
+                 case "CARGAR":
+                    if(data.error !== ""){
+                        console.log("error");
+                    }
+                    else{
+                        console.log("data");
+                    }
+                    break;
+                case "LISTAR":
+                    records = data.registros;
+                    if (data.registros.length===0){
+                        $("#menudiariosel").append('<option>No se encontraron registros</option>');
+                    }else{
+                        for(let registro of data.registros){
+                            let nombre = registro.p_nombre;
+                            let id = registro.id_plato;
+                            $("#menudiariosel").append('<option value="'+id+'">'+nombre+'</option>');
+                        }
+                    }
+                    
+                    break;
+                }
+        }).fail(function(jqXHR, textStatus, errorThrown){
+            console.error("Error: "+textStatus+" - "+errorThrown);
+        }).always(function(){});        
+        },
+     "ActivacionBotones" : function(tipo, nivel){
+         switch (tipo){
+             case "DIARIO":
+                     $("#menuDiario").removeAttr("hidden");
+                    switch (nivel){
+                        case 1:
+                            $("#existente").removeAttr("hidden");
+                            $("#nuevo").attr("hidden","");
+                            this.listarPlatos();
+                        break;
+                        case 2:
+                            $("#nuevo").removeAttr("hidden");
+                            $("#existente").attr("hidden","");
+                        break;
+                    }
+                 break;
+             case "SEMANAL":
+                 break;
+         }
+        
+    },
+};

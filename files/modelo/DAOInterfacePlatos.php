@@ -11,7 +11,7 @@ interface DAOInterfacePlatos {
      * @param int $id identificador del registro a buscar
      * @return \Plato Objeto instanciado
      */
-    public function cargar($id): \Platos;
+    public function cargar($id): \Plato;
     /**
      * Guarda los datos del objeto actual como un nuevo registro de la BDD
      * @param Plato $objeto Objeto instanciado a guardar

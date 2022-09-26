@@ -44,43 +44,43 @@
             <!--Botones para el tipo de menu que quiere cargar -->
             <div class="container">
                 <div class="row justify-content-center">
-                    <button style="margin-right: 20px;" class="btn btn-lg btn-outline-dark" onclick = "menuDiario()">Menú Diario</button>
+                    <button style="margin-right: 20px;" class="btn btn-lg btn-outline-dark" onclick = "plato.ActivacionBotones('DIARIO')">Menú Diario</button>
                     <button class="btn btn-lg btn-outline-dark">Menú Semanal</button>
                 </div>
             </div>
             <script>
                 //Función para mostrar u ocultar formulario de menu
-                function menuDiario() {
+               /* function menuDiario() {
                 var x = document.getElementById("menuDiario");
                 if (x.style.display === "none") {
                     x.style.display = "block";
                 } else {
                     x.style.display = "none";
                 }
-                }
+                }*/
                 //Función para mostrar plato existente
-                function existente() {
+                /*function existente() {
                 var x = document.getElementById("existente");
                 if (x.style.display === "none") {
                     x.style.display = "block";
                 } else {
                     x.style.display = "none";
                 }
-            }
+            }*/
             //Función para cargar nuevo plato
-            function nuevo() {
+           /* function nuevo() {
                 var x = document.getElementById("nuevo");
                 if (x.style.display === "none") {
                     x.style.display = "block";
                 } else {
                     x.style.display = "none";
                 }
-            }
+            }*/
             
             </script>
         
             <!-- Formulario de carga de menu -->
-            <div style="display:none;" class="container col-12" id="menuDiario">
+            <div style="display:block;" class="container col-12" id="menuDiario" name="menuDiario" hidden="true">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-md-12 col-sm-12">
@@ -89,23 +89,21 @@
                                 <div class="card-body">
                                     <div class="container">
                                         <div class="row justify-content-center">
-                                            <button onclick="existente()"style="margin-right: 20px;" class="btn btn-lg btn-outline-dark">Plato Existente</button>
-                                            <button onclick="nuevo()"class="btn btn-lg btn-outline-dark">Nuevo Plato</button>
+                                            <button onclick="plato.ActivacionBotones('DIARIO',1)" style="margin-right: 20px;" class="btn btn-lg btn-outline-dark" >Plato Existente</button>
+                                            <button onclick="plato.ActivacionBotones('DIARIO',2)" class="btn btn-lg btn-outline-dark">Nuevo Plato</button>
                                         </div>
                                     </div>
                                     
                                     <!-- Formulario de menu existente -->
-                                    <div style="display:none;" class="row descripcion" id="existente">
+                                    <div style="display:block;" class="row descripcion" id="existente" name="existente" hidden="">
                                     <hr>
                                         <p class="card-title">Selección de menú existente</p>
                                         <form action="" method="">
                                         <div class="form-group row">
                                             <label for="legajo" class="col-md-3 col-sm-3 col-12 col-form-label text-md-right">Plato</label>
                                             <div class="col-md-2 col-sm-2 col-10">
-                                                <select type="" id="legajo" class="form-control" name="legajo" required autofocus >
-                                                    <option>Menú 1</option>
-                                                    <option>Menú 2</option>
-                                                    <option>Menú 3</option>
+                                                <select type="" id="menudiariosel" name="menudiariosel" class="form-control" required autofocus >
+                                                    
                                                 </select>
                                             </div>
                                             <label for="legajo" class="col-md-2 col-sm-2 col-12 col-form-label text-md-right">Cantidad</label>
@@ -119,7 +117,7 @@
                                     </div>
                                     
                                     <!-- Formulario de nuevo plato -->
-                                    <div id="nuevo"style="display:none;" class="row descripcion">
+                                    <div id="nuevo" name="nuevo" style="display:block;" class="row descripcion" hidden="">
                                     <hr style="margin-top: 50px">
                                     <p>Carga de nuevo plato</p>
                                     

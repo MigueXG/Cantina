@@ -48,7 +48,41 @@ if (!isset($_POST['data'])){
           echo $ex->getMessage();
       }
     }
-}
-echo json_encode($respuesta);
+}else{
+        $data = json_decode($_POST["data"]);
+        $respuesta->{"accion"} = $data->{"accion"};
+        if($data->{"accion"} === "CARGAR"){
+        try{
+            $con = Conexion::establecer();
+            $PlatoDAO = new PlatoDAO($con);
+            
+            $plato = $PlatoDAO->cargar($data->{"id"});
 
+            if($plato->getId() > 0){
+                $respuesta->{"registros"} = $plato->toJSON();
+            }
+            else{
+                $respuesta->{"error"} = $PlatoDAO->getError();
+            }
+
+            $con = null;
+        } catch (PDOException $ex) {
+            echo $ex->getMessage();
+            }
+        }else{
+            if($data->{"accion"} === "LISTAR"){
+                try{
+                $con = Conexion::establecer();
+                $PlatoDAO = new PlatoDAO($con);
+                $respuesta->{"registros"} = $PlatoDAO->listar($data);
+                $respuesta->{"error"} = $PlatoDAO->getError();
+                $respuesta->{"total"} = $PlatoDAO->getRegistrosEncontrados();
+                $con = null;
+            } catch (PDOException $ex) {
+                echo $ex->getMessage();
+            }
+            }
+        }
+    }
+echo json_encode($respuesta);
 ?>
