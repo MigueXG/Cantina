@@ -10,7 +10,7 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
               <div class="navbar-nav">
-                <a class="nav-link active" href="#">Reservas <span class="sr-only">(current)</span></a>
+                <a class="nav-link active" href="/Cantina/files/reservas.php">Reservas <span class="sr-only">(current)</span></a>
                 <a class="nav-link" href="#">Platos</a>
                 <a class="nav-link" href="#">Reportes</a>
               </div>

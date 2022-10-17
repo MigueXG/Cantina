@@ -48,6 +48,13 @@ let plato = {
         plato.filtros.clave = "";
         plato.abm(this.filtros);
     },
+    "platoDiario" : function(){
+        plato.data.id = parseInt($("#menudiariosel :selected").val());
+        plato.data.cantidad = parseInt($("#cantidad").val());
+        /*AGREGAR ACTUALIZACION DE FECHA PARA EL PROXIMO DIA*/
+        plato.data.fecha = new Date();
+        console.log(plato.data.fecha);
+    },
     "validarPlato" : function(){
         
     },
@@ -61,7 +68,6 @@ let plato = {
             "accept":"JSON",
             "data":{"data":JSON.stringify(param)}
         }).done(function(data,textStatus){
-            console.log(data);
             switch(data.accion){
                  case "CARGAR":
                     if(data.error !== ""){
@@ -97,6 +103,7 @@ let plato = {
                         case 1:
                             $("#existente").removeAttr("hidden");
                             $("#nuevo").attr("hidden","");
+                            $("#menudiariosel").empty();
                             this.listarPlatos();
                         break;
                         case 2:

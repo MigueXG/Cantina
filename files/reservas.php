@@ -11,8 +11,11 @@
         <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
         <script src="https://kit.fontawesome.com/087ef8a17c.js" crossorigin="anonymous"></script>
         <!--Scripts-->
+        <script src="lib/jquery-3.6.1.min.js" type="text/javascript"></script>
+        <script src="lib/jquery-3.6.1.slim.min.js" type="text/javascript"></script>
         <script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="js/Plato.js" type="text/javascript"></script>
         <link href="/lib/bootstrap.min.js" type="text/javascript"/>
         <script src="lib/bootstrap.bundle.min.js" type="text/javascript"></script>  
         
@@ -39,7 +42,7 @@
                                <h6 class="heading1 ">Reservas de Hoy</h6>
                             </div>
                             <div class="table-responsive">
-                            <table class="table table-hover table-borderless">
+                                <table class="table table-hover table-borderless" id="TablaReservas" name="TablaReservas">
                                <thead>
                                    <th>Legajo</th>
                                    <th>Nombre y Apellido</th>
@@ -47,7 +50,7 @@
                                    <th>Para llevar</th>
                                    <th>Opciones</th>
                                </thead>
-                               <tbody>
+                               <tbody id="TbodyTR" name="TbodyTR">
                                     <tr>
                                         <td id="legajo">2005670</td>
                                         <td id="nombre">Air Jordon 1 Mis Shattered </td>

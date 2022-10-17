@@ -3,12 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/Cantina/files/modelo/DAOInterfacePlatos.php</file>
             <file>file:/C:/xampp/htdocs/Cantina/files/controlador/PlatoControlador.php</file>
+            <file>file:/C:/xampp/htdocs/Cantina/index.php</file>
             <file>file:/C:/xampp/htdocs/Cantina/files/cargaPlatos.php</file>
             <file>file:/C:/xampp/htdocs/Cantina/files/entidad/Plato.php</file>
             <file>file:/C:/xampp/htdocs/Cantina/js/Plato.js</file>
             <file>file:/C:/xampp/htdocs/Cantina/files/modelo/PlatoDAO.php</file>
+            <file>file:/C:/xampp/htdocs/Cantina/files/secciones/headerAdmin.php</file>
         </group>
     </open-files>
 </project-private>

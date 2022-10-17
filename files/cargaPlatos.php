@@ -48,36 +48,6 @@
                     <button class="btn btn-lg btn-outline-dark">Menú Semanal</button>
                 </div>
             </div>
-            <script>
-                //Función para mostrar u ocultar formulario de menu
-               /* function menuDiario() {
-                var x = document.getElementById("menuDiario");
-                if (x.style.display === "none") {
-                    x.style.display = "block";
-                } else {
-                    x.style.display = "none";
-                }
-                }*/
-                //Función para mostrar plato existente
-                /*function existente() {
-                var x = document.getElementById("existente");
-                if (x.style.display === "none") {
-                    x.style.display = "block";
-                } else {
-                    x.style.display = "none";
-                }
-            }*/
-            //Función para cargar nuevo plato
-           /* function nuevo() {
-                var x = document.getElementById("nuevo");
-                if (x.style.display === "none") {
-                    x.style.display = "block";
-                } else {
-                    x.style.display = "none";
-                }
-            }*/
-            
-            </script>
         
             <!-- Formulario de carga de menu -->
             <div style="display:block;" class="container col-12" id="menuDiario" name="menuDiario" hidden="true">
@@ -100,17 +70,17 @@
                                         <p class="card-title">Selección de menú existente</p>
                                         <form action="" method="">
                                         <div class="form-group row">
-                                            <label for="legajo" class="col-md-3 col-sm-3 col-12 col-form-label text-md-right">Plato</label>
+                                            <label for="menudiariosel" class="col-md-3 col-sm-3 col-12 col-form-label text-md-right">Plato</label>
                                             <div class="col-md-2 col-sm-2 col-10">
                                                 <select type="" id="menudiariosel" name="menudiariosel" class="form-control" required autofocus >
                                                     
                                                 </select>
                                             </div>
-                                            <label for="legajo" class="col-md-2 col-sm-2 col-12 col-form-label text-md-right">Cantidad</label>
+                                            <label for="cantidad" class="col-md-2 col-sm-2 col-12 col-form-label text-md-right">Cantidad</label>
                                             <div class="col-md-2 col-sm-2 col-10">
-                                                <input type="number" id="legajo" class="form-control" name="legajo" required autofocus >
+                                                <input type="number" id="cantidad" class="form-control" name="cantidad" required autofocus value="0">
                                             </div>
-                                            <a type="button" class="btn btn-outline-primary">Seleccionar</a>
+                                            <a type="button" class="btn btn-outline-primary" onclick="plato.platoDiario()">Seleccionar</a>
                                         </div>    
                                     </form>
                                     
